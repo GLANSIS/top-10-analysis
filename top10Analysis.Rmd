@@ -1,0 +1,648 @@
+---
+title: "Top 10 Paper Analysis and Figure Creation"
+author: "Joseph Redinger"
+date: "1/22/2024"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r global_options, include = FALSE}
+knitr::opts_chunk$set(message=FALSE,
+tidy.opts=list(width.cutoff=60))
+
+```
+
+##### **Paper:** The Great Lakes’ Most Unwanted: Characterizing the Impacts of the Top Great Lakes Aquatic Invasive Species - El Lower, Rochelle Sturtevant, Susannah Iott, Felix Martinez, Ed Rutherford, Doran M. Mason, Joseph Redinger and Ashley K. Elgin 
+
+##### **Script Summary:** The following scripts cleans and organizes invasive species impact score data for chi-square tests. Also, script produces Figure 1 bar plot and Figure2 pie charts for publication. Lastly, best fits and analyzes of best GLMs for counts of impact factors calculated from GLANSIS organisms risk assessments (removed for final drafts of paper).  
+
+# SETUP
+
+##### **Import libraries for data cleaning, data analysis, and figure creation**
+```{r, message = FALSE, warning = FALSE}
+# following libraries are necessary for cleaning data for chi-square tests 
+# and creating figures.
+
+library(knitr)      # creates markup file
+library(dplyr)      # assists with 
+library(ggplot2)    # plot figures
+library(ggpubr)     # arrange ggplots for figure
+library(ggpattern)  # add pattern to black and white pie charts
+library(colorspace) # adjust pattern for piechart
+
+
+# following libraries for testing GLMs and zero inflated models - removed
+# from final drafts of paper.
+
+library(MASS)       # run glm with negative binomial distribution
+library(pscl)       # run zero-inflation model
+library(boot)       # bootstrapping confidence interval
+library(countreg)   # plot model dispersion
+
+```
+
+### **Upload & clean data**
+
+##### This analysis looked only at the species nonindigenous to the Great Lakes basin which scored as ‘invasive’ for either environmental or socioeconomic impact using the original OIA process.  All species with IF of 0 & 1 were removed (impact factors range from 2-72).This effectively excludes all species classified as ‘no significant impact’ and ‘unknown’.
+
+```{r, results = "hide", warning = FALSE}
+# import csv
+dat <- read.csv("glansis_species_impact_scores.csv", header = T)
+
+# select established species
+dat <- dat[which(dat['status'] == 'established'),]
+
+# remove species with impact scores less than 1
+dat <- dat[which(dat['IF.score'] > 1),]
+
+# list of range expanders
+species_remove <- c('Aeromonas salmonicida', 'Cyclops strenuus', 'Ictiobus niger', 'Lupinus polyphyllus', 'Nasturtium officinale', 'Pylodictis olivaris', 'Radix auricularia', 'Rorippa sylvestris', 'Rumex longifolius', 'Schyzocotyle acheilognathi', 'Ulva (Enteromorpha) prolifera')
+
+# remove range expanders
+dat <- dat[!(dat$scientific.name %in% species_remove), ]
+
+```
+
+### **Exploratory data analysis**
+``` {r, warning = FALSE}
+head(dat, 5)
+names(dat)
+dim(dat)
+str(dat)
+
+```
+
+### **Split data into top 10 & other species dataframes**
+``` {r, warning = FALSE}
+# top10
+top10 = dat[1:10,]
+
+# all nonindigenous species
+all = dat[11:nrow(dat),]
+
+```
+
+# CHI-SQUARE ANALYSIS
+
+### **Create tables**
+
+##### Impact score data are re-grouped by origin & taxa & vector then recombined into table 
+
+##### Origin data table
+```{r}
+# Top 10 species
+top10.org = as.data.frame(table(top10$origin))
+
+top10.org = top10.org %>% 
+      rename("origin" = "Var1") %>%
+      rename("freq.top10" = "Freq")
+
+
+# Nonindigenous species
+all.org = as.data.frame(table(all$origin))
+
+all.org = all.org %>% 
+      rename("origin" = "Var1") %>%
+      rename("freq.all"="Freq")
+
+
+# Combine tables
+df.org = full_join(all.org, top10.org, by = join_by("origin" == "origin")) %>% 
+      replace(is.na(.), 0)
+
+df.org
+
+```
+
+##### Taxa data table
+```{r}
+# Top 10 species
+top10.taxa = as.data.frame(table(top10$taxa))
+
+top10.taxa = top10.taxa %>% 
+       rename("taxa" = "Var1") %>%
+       rename("freq.top10"="Freq")
+
+
+# Nonindigenous species
+all.taxa= as.data.frame(table(all$taxa))
+
+all.taxa = all.taxa %>% 
+      rename("taxa" = "Var1") %>%
+      rename("freq.all"="Freq") 
+
+
+# Combine tables
+df.taxa = full_join(all.taxa, top10.taxa, by = join_by("taxa" == "taxa")) %>% 
+      replace(is.na(.), 0)
+
+df.taxa
+
+```
+
+##### Vector data table
+```{r}
+# Top 10 species
+top10.vector = as.data.frame(table(top10$vector))
+
+top10.vector = top10.vector %>% 
+       rename("vector" = "Var1") %>%
+       rename("freq.top10"="Freq")
+
+
+# Nonindigenous species
+all.vector = as.data.frame(table(all$vector))
+
+all.vector = all.vector %>% 
+      rename("vector" = "Var1") %>%
+      rename("freq.all"="Freq") 
+
+
+# Combine tables
+df.vector = full_join(all.vector, top10.vector, by = join_by("vector" == "vector")) %>% 
+      replace(is.na(.), 0)
+
+df.vector
+
+```
+
+### Chi-square test of independence 
+```{r, warning = FALSE}
+# origin chi-square test
+print(chisq.test(df.org[2:3]))
+
+# taxa chi-square test
+print(chisq.test(df.taxa[2:3]))
+
+# taxa chi-square test
+print(chisq.test(df.vector[2:3]))
+
+```
+
+# FIGURE CREATION
+
+##### **Creation of bar plot** 
+
+##### Figure 1: Distribution of impact scores across the 78 species with scores ≥2. Of these 78 species, 32 species had moderate impacts with scores from 2-5 (black bars), 36 species had high impacts with scores from 6-18 (gray bars), and the remaining 10 species, with scores ≥20 (white bars), had exceptionally strong impacts in multiple categories.
+```{r, warning = FALSE}
+# create number sequence for impact score categories
+sequence = paste(seq(2, 54, by = 2), "-", seq(3, 55, by = 2))
+
+# create sequence interval for breaks
+breaks = seq(2, 56, by = 2)
+
+# divide range of IF.scores into interval codes
+intervals = cut(dat$IF.score, breaks = breaks, include.lowest = TRUE, 
+                right = FALSE)
+
+# create contigency table based on interval counts
+frequency_table = table(intervals)
+
+# create color labels (number of repeats chosen for visual appeal)
+color_labels = c(rep("black", 2), rep("grey", 7), rep("white", 18))
+
+# create data frame for bar plot
+barplot_df = data.frame(categories = sequence, 
+                        frequency = as.vector(frequency_table), 
+                        color = color_labels)
+
+
+# ensure categories is treated as factor - also use levels option to sort
+# the categories
+barplot_df$categories = factor(barplot_df$categories, 
+                               levels = barplot_df$categories)
+
+# create bar plot with ggplot
+inv_barplot = ggplot(barplot_df, aes(x = categories, 
+                                     y = frequency, 
+                                     fill = color)) +
+  geom_hline(yintercept = seq(0, 25, by = 1), 
+             color = "gray88", 
+             linetype = "solid") +
+  geom_hline(yintercept = seq(0, 25, by = 5), 
+             color = "gray40", 
+             linetype = "solid") +
+  geom_bar(stat = "identity", color = "black", width = 0.8, size = 0.75) +
+  xlab( 'Impact Scores') +
+  ylab('Number of Species') +
+  scale_fill_identity() +
+  theme_minimal() +
+  theme(panel.grid = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.y = element_line(color = "gray", 
+                                          linetype = "solid"),
+        axis.text.x = element_text(size = 10, color = "black", 
+                                   face = "bold", angle = 270, 
+                                   hjust = -0.01, vjust = 0.3, 
+                                   margin = margin(t = -10)),
+        axis.text.y = element_text(size = 12, color = "black", face = "bold"),
+        axis.title.x = element_text(size = 16, face = "bold", 
+                                    margin = margin(t = 1, unit = "lines")),
+        axis.title.y = element_text(size = 16, face = "bold", 
+                                    margin = margin(r = 1, unit = "lines"))
+  )
+inv_barplot
+
+# save figure as jpg file- keep commented until final product is ready
+# ggsave(inv_barplot, file = "impact.factor.barplot.jpg", 
+#       width = 20, 
+#       height = 12, 
+#       units = c("cm"), 
+#       dpi = 400)
+
+```
+
+##### **Pie Chart Creation**
+
+##### Prepare data for piechart creation: Counts of IF.scores from frequency data tables need to be converted to be converted to percentages. The top10 and nonindigenous species data frame will need to be put back together. This needs to be performed from orgin, taxa, and vector data tables. 
+```{r, results = "hide"}
+# origin data prep
+df.org$freq.all = (df.org$freq.all / sum(df.org$freq.all)) * 100   
+df.org$freq.top10 = (df.org$freq.top10 / sum(df.org$freq.top10)) * 100
+df.org = cbind(df.org[1], stack(df.org[2:3]))
+
+# taxa data prep
+df.taxa$freq.all = (df.taxa$freq.all / sum(df.taxa$freq.all)) * 100
+df.taxa$freq.top10 = (df.taxa$freq.top10 / sum(df.taxa$freq.top10)) * 100
+df.taxa = cbind(df.taxa[1], stack(df.taxa[2:3]))
+
+# vector data prep
+df.vector$freq.all = (df.vector$freq.all / sum(df.vector$freq.all)) * 100
+df.vector$freq.top10 = (df.vector$freq.top10 / sum(df.vector$freq.top10)) * 100
+df.vector = cbind(df.vector[1], stack(df.vector[2:3]))
+
+```
+
+##### Create customized color and pattern pallets for figures
+```{r, results = "hide"}
+# new color and pattern palletes
+new.pallete = c("white", "grey35", "white", "gray60", "white", "grey80")
+new.pattern = c("circle", "none", "stripe", "none", "crosshatch", "none")
+
+```
+
+
+##### Create pie charts using ggplot. *Note: further adjustments to alignment will need to be done after saving figure.*
+
+##### Figure 2: Comparison of characteristics between all Great Lakes invasive species (n=78) and top ten invaders: (A) Continent of origin, where continents with values <2% (Australasia, Africa, Central America, and South America) were pooled into a single “Other” category; (B) Taxonomic group; and (C) Vector of introduction. 
+```{r}
+# create origin piecharts
+pie_origin = ggplot(data = df.org, aes(x=" ", y = values, group = origin)) +
+  geom_col_pattern(aes(fill = origin, pattern = origin, pattern_fill = after_scale(darken(fill, 0.5))), pattern_colour = "black", pattern_fill = "black") +
+  scale_pattern_discrete(choices = new.pattern) +
+  scale_fill_manual(values = new.pallete) +
+  geom_col(colour = "black", fill = NA) + # black trim
+  coord_polar(theta = "y") +
+  facet_grid(.~ ind, labeller = as_labeller(c(freq.all = '', freq.top10 = ''))) +
+  xlab("(A) Continent of \nOrigin") +
+  theme_void() +
+  theme(
+    legend.title = element_blank(),
+    legend.text = element_text(size = 11, , face = "bold"),
+    legend.key = element_rect(colour = "black", fill = "black"),
+    legend.key.size = unit(1, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    axis.ticks = element_blank(),
+    axis.line.x = element_blank(),
+    axis.line.y = element_blank(),
+    axis.title.x = element_blank(),
+    axis.title.y = element_text(angle = 360, vjust = 0.5, face = "bold", size = 14),
+    axis.text.x = element_blank(),
+    panel.grid  = element_blank()
+  )
+pie_origin
+
+# create taxa piecharts
+
+## rename levels for this piechart
+df.taxa$taxa = factor(df.taxa$taxa, levels = c("Algae", "Crustaceans", "Fish", "Mollusks", "Plants", "Other")) 
+
+pie_taxa = ggplot(data = df.taxa, aes(x=" ", y = values, group = taxa)) +
+  geom_col_pattern(aes(fill = taxa, pattern = taxa, pattern_fill = after_scale(darken(fill, 0.5))), pattern_colour = "black", pattern_fill = "black") +
+  scale_pattern_discrete(choices = new.pattern) +
+  scale_fill_manual(values = new.pallete) +
+  geom_col(colour = "black", fill = NA) + # black trim
+  coord_polar(theta = "y") +
+  facet_grid(.~ ind, labeller = as_labeller(c(freq.all = '', freq.top10 = ''))) +
+  xlab("(B) Taxonomic \nGroup") +
+  theme_void() +
+  theme(
+    legend.title = element_blank(),
+    legend.text = element_text(size = 11, , face = "bold"),
+    legend.key = element_rect(colour = "black"),
+    legend.key.size = unit(1, "cm"),
+    legend.spacing.y = unit(0.5, 'cm'),
+    plot.title = element_text(hjust = 0.5),
+    axis.ticks = element_blank(),
+    axis.line.x = element_blank(),
+    axis.line.y = element_blank(),
+    axis.title.x = element_blank(),
+    axis.title.y = element_text(angle = 360, vjust = 0.5, face = "bold", size = 14),
+    axis.text.x = element_blank(),
+    panel.grid  = element_blank()
+  )
+pie_taxa
+
+# create vector piechart
+pie_vector = ggplot(data = df.vector, aes(x=" ", y = values, group = vector)) +
+  geom_col_pattern(aes(fill = vector, pattern = vector, pattern_fill = after_scale(darken(fill, 0.5))), pattern_colour = "black", pattern_fill = "black", ) +
+  scale_pattern_discrete(choices = new.pattern) +
+  scale_fill_manual(values = new.pallete) +
+  geom_col(colour = "black", fill = NA) + # black trim
+  coord_polar(theta = "y") +
+  facet_grid(.~ ind, labeller = as_labeller(c(freq.all = '', freq.top10 = ''))) +
+  xlab("(C) Vector of \nIntroduction") +
+  theme_void() +
+  theme(
+    legend.title = element_blank(),
+    legend.text = element_text(size = 11, , face = "bold"),
+    legend.key = element_rect(colour = "black"),
+    legend.spacing.y = unit(0.5, 'cm'),
+    legend.key.size = unit(1, "cm"),
+    plot.title = element_text(hjust = 0.5),
+    axis.ticks = element_blank(),
+    axis.line.x = element_blank(),
+    axis.line.y = element_blank(),
+    axis.title.x = element_blank(),
+    axis.title.y = element_text(angle = 360, vjust = 0.5, face = "bold", size = 14),
+    axis.text.x = element_blank(),
+    panel.grid  = element_blank()
+  )
+pie_vector
+
+
+# combine the three figures together
+# note: do not display figure in markdown because it is compressed and jumbled
+figure = ggarrange(pie_origin, pie_taxa, pie_vector, ncol = 1, nrow = 3, align = c("hv"))
+figure = annotate_figure(figure, top = text_grob("All Invasive Species       Top 10 Invasive Species", color = "black", face = "bold", size = 23))
+
+
+# Save ggplots and figures - keep commented until final product is ready
+# ggsave(figure, file = "pie.graphs1.jpg", width = 30, height = 25, units = c("cm"), dpi = 400)
+
+```
+
+# ANALYSIS REMOVED IN LATER DRAFTS
+
+### **GLM/Zero-Inflation Modeling**
+
+##### Below is the analysis for the zero inflation models. Ultimatly, we decided to remove this portion of the analysis. However, the work for the analysis is below. 
+
+
+```{r, warning = FALSE}
+# following libraries for testing GLMs and zero inflated models - removed
+# from final drafts of paper.
+
+library(MASS)       # run glm with negative binomial distribution
+library(pscl)       # run zero-inflation model
+library(boot)       # bootstrapping confidence interval
+library(countreg)   # plot model dispersion
+
+```
+
+##### Create a new table with counts for each IF.score
+```{r}
+# Get the table of categories
+category_table = table(dat$IF.Score)
+category_table
+
+# Create a vector of all possible categories (from 2 to 60)
+all_categories = 2:60
+
+# Create a named vector of counts, including categories with 0 values
+category_counts <- rep(0, length(all_categories))
+names(category_counts) <- all_categories
+
+# Fill in the counts from the table
+category_counts[names(category_table)] <- category_table
+
+# Convert category_counts to a dataframe
+df <- data.frame(impact.factor = as.integer(names(category_counts)),
+                          count = as.integer(category_counts),
+                          stringsAsFactors = FALSE)
+
+# Remove impact.factor of 0 
+df = df[which(df['impact.factor'] != 0),]
+
+```
+
+#### **Create models**
+
+##### Excessive zeroes can cause overdispersion in GLMS. Zero-inflated models were included in analysis to account for this. 
+##### A Hurdle model is type of zero-inflated model. Hurdle models assume that there is only one process by which a zero can be produced, while zero-inflated models assume that there are 2 different processes that can produce a zero. In this case, zero count data can result from either having no species with that impact value or having not enough research, which result in unknowns. Hypothetically removing species with impact factors of 0 and 1, species with unknowns should have been removed. Hurdle models were included because we species that had a zero impact factor less than 1 were removed from the analyses (Hurdle model was used by Austin in initial analysis).
+
+```{r, warning = FALSE}
+# fit Poisson model
+mod.1 = glm(count ~ impact.factor, family = "poisson", data = df)
+
+# fit negative binomial model
+mod.2 = glm.nb(count ~ impact.factor, data = df)
+
+# fit zero-inflation Poisson model
+mod.3 = zeroinfl(count ~ impact.factor, dist = "poisson", data = df)
+
+# fit zero-inflated negative binomial model
+mod.4 = zeroinfl(count ~ impact.factor, dist = "negbin", data = df)
+
+# fit hurdle model with poisson distribution
+mod.5 = hurdle(count ~ impact.factor, dist = "poisson", link = "logit", data = df)
+
+# fit hurdle model with negative binomial
+mod.6 = hurdle(count ~ impact.factor, dist = "negbin", link = "logit", data = df)
+
+```
+
+#### **Create function to check model over/under dispersion**
+```{r}
+disp = function(model, df){
+  sum((resid(model, type = "pearson"))^2)/(nrow(df)-length(coef(model)))
+} 
+
+```
+
+#### **Compare models**
+
+##### model dispersions: 
+##### Hurdle models (mod.5 & mod.6) have lowest dispersion
+##### Best GLMs will have a dispersion close to 1. Models with dispersion >1 are overdispersed, and models with dispersion <1 are underdispersed.
+
+```{r}
+dispersion = c(round(disp(mod.1, df), 2), round(disp(mod.2, df), 2), 
+               round(disp(mod.3, df), 2), round(disp(mod.4, df), 2),
+               round(disp(mod.5, df), 2), round(disp(mod.6, df), 2))
+
+models = c("mod.1", "mod.2", "mod.3", "mod.4", "mod.5", "mod.6")
+
+kable(cbind(models, dispersion))
+
+```
+
+
+##### rootgram plots:
+##### According to rootgram plots Hurdle models (mod.5 & mod.6) reduce over- and under-fitting.
+##### Interpreting graphs: Rootgram plots allows us to easily visualize goodness-of-fit of count data regression. It displays where the model is over- or under-fitting by displaying differences between actual and predicted counts. Red-line/top of boxes are predicted models values. Bottom of boxes are the differences between predicted and actual values. At 0, the model fits perfectly. When boxes below reach below 0 the model under-fits, and when boxes are greater then the model over-fits.
+
+```{r, warning = FALSE}
+par(mfrow = c(2,3))
+
+rootogram(mod.1)
+rootogram(mod.2)
+rootogram(mod.3)
+rootogram(mod.4)
+rootogram(mod.5)
+rootogram(mod.6)
+
+```
+
+
+##### Akaike information criterion (AIC) values:
+##### Hurdle model with Poisson distribution had lowest AIC value.
+##### AIC is an estimator of prediction error.
+
+```{r, warning = FALSE}
+AIC(mod.1, mod.2, mod.3, mod.4, mod.5, mod.6)
+
+```
+
+### **Hurdle Model with Poisson distribution (mod.5) Analysis**
+
+#### **Hurdle model output**
+#####The outputs of zero-inflated models include two parts, the first of which is the probability of the non-zero values (count model) and the second model is the probability of attaining value 0 (zero hurdle model).
+
+```{r}
+summary(mod.5)
+
+```
+
+#### **Bootstrapping confidence interval**
+
+##### Nonparametric bootstrapping (*boot*) with 1000 replicates was run to generate 95% bias corrected and accelerated (BCa) confidence intervals. A BCa was chosen over percentile based confidence intervals to adjust for the heavily skewed data.
+
+##### create bootstrap coefficients
+```{r, results = FALSE}
+set.seed(0)
+
+# create function that takes data and indices as inputs and returns parameters
+boot_func = function(data, index) {
+  model = hurdle(count ~ impact.factor, dist = "poisson", link = "logit", data = df[index, ])
+  as.vector(t(do.call(rbind, coef(summary(model)))[, 1]))
+}
+
+# use boot function to bootstrap coefficients
+# results are alternating parameter estimates and standard errors. That is, the first row has the first parameter estimate from our model. The second has the standard error for the first parameter.
+
+boot.coef = boot(data = df, statistic = boot_func, R = 1000) 
+boot.coef
+
+```
+
+##### hurdle model coefficients
+```{r, results = FALSE}
+
+# create function to get basic parameter estimates with percentile and bias adjusted CIs
+parms = t(sapply(c(1:4), function(i) {
+  out = boot.ci(boot.coef, index = c(i), type = "bca")
+  with(out, c(Est = t0, bcaLL = bca[4], bcaUL = bca[5]))
+}))
+
+# add row names
+row.names(parms) = names(coef(mod.5))
+
+# print results
+parms
+
+```
+
+##### hurdle model coefficients - exponentiated
+```{r}
+# create function to get basic exponentiated parameter estimates with percentile and bias adjusted CIs
+expparms = t(sapply(c(1:4), function(i) {
+  out = boot.ci(boot.coef, index = c(i), type = "bca", h = exp)
+  with(out, c(Est = t0, bcaLL = bca[4], bcaUL = bca[5]))
+}))
+
+# add row names
+row.names(expparms) = names(coef(mod.5))
+
+# print results
+expparms
+
+```
+
+<br>
+
+#### **Hurdle model figures**
+
+```{r, echo = FALSE, results = "HIDE", warning = FALSE}
+# creat dataframe with model predictions
+df = as.data.frame(df)
+df$hurdle.mod = predict(mod.5, type = "response")
+df$count.mod = predict(mod.5, type = "count")
+df$zero.mod = predict(mod.5, type = "zero")
+
+```
+
+```{r, include = FALSE}
+# graphing models
+mod.graph = ggplot()+
+  geom_point(dat = df, aes(x = impact.factor, y = count), shape = 1, size = 1.25) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 63)) +
+  theme_classic() +
+  xlab("Impact Factor") +
+  ylab("Count") +
+  theme(
+    legend.position = "none",
+    axis.line = element_line(size = 1),
+    #text = element_text(size = 12),
+    #axis.text = element_text(size = 10),
+    axis.text.x = element_text(size = 12, color = "black", face = "bold"),
+    axis.text.y = element_text(size = 12, color = "black", face = "bold"),
+    axis.title.x = element_text(size = 16, face = "bold", margin = margin(t = 1, unit = "lines")),
+    axis.title.y = element_text(size = 16, face = "bold", margin = margin(r = 1, unit = "lines"))
+  )
+
+mod.graph
+
+# graphing models
+hurdle.graph = mod.graph +
+  geom_line(dat = df, aes(x = impact.factor, y = hurdle.mod), size = 1.25, col = 2)
+#hurdle.graph
+
+hurdle.count = mod.graph +
+  geom_line(dat = df, aes(x = impact.factor, y = count.mod), size = 1.25, col = 2)
+#hurdle.count
+
+hurdle.zero = mod.graph +
+  geom_line(dat = df, aes(x = impact.factor, y = zero.mod), size = 1.25, col = 2)
+#hurdle.zero
+
+```
+
+
+```{r, echo = FALSE}
+figure = ggarrange(hurdle.count, hurdle.zero, hurdle.graph, labels = c("A", "B", "C"), ncol = 2, nrow = 2)
+figure
+
+```
+
+
+```{r, include = FALSE, warning = FALSE}
+### Save ggplots and figures - keep commented until final product is ready
+
+# ggsave(hurdle.graph, file = "hurdle.graph.pdf", width = 15, height = 10, units = c("cm"), dpi = 400)
+# ggsave(hurdle.graph, file = "hurdle.graph.jpeg", width = 15, height = 10, units = c("cm"), dpi = 400)
+
+# ggsave(hurdle.count, file = "hurdle.count.pdf", width = 18, height = 12, units = c("cm"), dpi = 400)
+# ggsave(hurdle.count, file = "hurdle.count.jpeg", width = 18, height = 12, units = c("cm"), dpi = 400)
+
+# ggsave(hurdle.zero, file = "hurdle.zero.pdf", width = 18, height = 12, units = c("cm"), dpi = 400)
+# ggsave(hurdle.zero, file = "hurdle.zero.jpeg", width = 18, height = 12, units = c("cm"), dpi = 400)
+
+# ggsave(figure, file = "hurdle.figure.pdf", width = 16, height = 16, units = c("cm"), dpi = 400)
+# ggsave(figure, file = "hurdle.figure.jpeg", width = 16, height = 16, units = c("cm"), dpi = 400)
+
+```
+
+
