@@ -1,0 +1,201 @@
+species.id,genus,species,subspecies,scientific.name,common.name,origin,taxa,vector,first.date,IF.score,unknown,tm.161,status,Scientific Name,IF Score,Source
+5,Dreissena,polymorpha,,Dreissena polymorpha,Zebra mussel,Eurasia,Mollusks,Ballast,1986,55,0,a,established,Dreissena polymorpha,55,TM-161
+95,Dreissena,bugensis,,Dreissena bugensis,Quagga mussel,Eurasia,Mollusks,Ballast,1896,45,0,a,established,Dreissena bugensis,45,"Sturtevant and Elgin 2019 (TM-161c), TM-161"
+490,Alosa,pseudoharengus,,Alosa pseudoharengus,Alewife,North America,Fish,Canal,1868,32,0,d,established,Alosa pseudoharengus,32,Bartos 2020 (TM-161d)
+836,Petromyzon,marinus,,Petromyzon marinus,Sea Lamprey,North America,Fish,Canal,1863,30,1,d,established,Petromyzon marinus,30,Lower 2020 (TM-161d)
+3585,Microstegium,vimineum,,Microstegium vimineum,Japanese stiltgrass,Eurasia,Plants,Hitchhiker,1991,26,1,d,established,Microstegium vimineum,26,Bartos 2020 (TM-161d)
+2947,Ctenopharyngodon,idella,,Ctenopharyngodon idella,Grass Carp (diploid),Asia,Fish,Deliberate Release,1993,25,0,c,established,Ctenopharyngodon idella,25,Boucher 2019 (TM-161c)
+2937,Phragmites,australis,australis,Phragmites australis australis,Common reed,Europe,Plants,Ballast,1869,25,0,b,established,Phragmites australis australis,25,Iott 2016 (TM-161b)
+263,Trapa,natans,,Trapa natans,Water chestnut,Eurasia,Plants,Direct Accidental Release,1949,25,0,e,established,Trapa natans,25,Lower 2021
+777,Morone,americana,,Morone americana,White Perch,North America,Fish,Canal,1946,22,1,a,established,Morone americana,20,Bartos 2021
+713,Neogobius,melanostomus,,Neogobius melanostomus,Round Goby,Eurasia,Fish,Ballast,1990,22,0,d,established,Neogobius melanostomus,22,Sturtevant 2020 (TM-161d)
+2736,Renibacterium (Corynebacterium),salmoninarum,,Renibacterium (Corynebacterium) salmoninarum,"Bacterial kidney disease (BKD), Dee disease",Europe,Other,Hitchhiker,1967,18,0,a,established,Renibacterium (Corynebacterium) salmoninarum,18,TM-161
+237,Myriophyllum,spicatum,,Myriophyllum spicatum,Eurasian watermilfoil,Eurasia,Plants,Direct Accidental Release,1880,16,0,a,established,Myriophyllum spicatum,16,TM-161
+163,Cercopagis,pengoi,,Cercopagis pengoi,Fishhook waterflea,Asia,Crustaceans,Ballast,1978,14,2,c,established,Cercopagis pengoi,14,"Boucher 2019 (TM-161c), TM-161"
+846,Gambusia,affinis,,Gambusia affinis,Western Mosquitofish,North America,Mollusks,Unknown,1923,14,5,Bartos 2022,established,Gambusia affinis,14,Bartos 2022
+2656,Novirhabdovirus,sp.,genotype IV sublineage b,Novirhabdovirus sp. genotype IV sublineage b,Viral Hemorrhagic Septicemia Virus (VHSV-IVb),North America,Other,Unknown,1969,14,0,a,established,Novirhabdovirus sp. genotype IV sublineage b,14,TM-161
+796,Osmerus,mordax,,Osmerus mordax,Rainbow Smelt,North America,Fish,Direct Accidental Release,1906,14,1,d,established,Osmerus mordax,14,Bartos 2020 (TM-161d)
+3814,Salix,atrocinerea,,Salix cf. cinerea/atrocinerea,Large gray willow,Eurasia,Plants,Unknown,,14,0,,established,Salix cf. cinerea/atrocinerea,0,
+4,Cyprinus,carpio,,Cyprinus carpio,Common Carp,Eurasia,Fish,Deliberate Release,1894,13,6,e,established,Cyprinus carpio,13,Bartos 2021
+2697,Frangula,alnus,,Frangula alnus,Glossy buckthorn,Eurasia,Plants,Deliberate Release,1874,13,2,a,established,Frangula alnus,13,"Sturtevant 2018 (TM-161b), TM-161"
+920,Oncorhynchus,tshawytscha,,Oncorhynchus tshawytscha,Chinook Salmon,North America,Fish,Deliberate Release,1873,13,1,c,established,Oncorhynchus tshawytscha,13,"Boucher and Lower 2019 (TM-161c), TM-161"
+1115,Iris,pseudacorus,,Iris pseudacorus,Yellow iris,Other,Plants,Deliberate Release,1882,11,3,a,established,Iris pseudacorus,11,TM-161
+1688,Nitellopsis,obtusa,,Nitellopsis obtusa,Starry stonewort,Eurasia,Plants,Ballast,1978,11,1,a,established,Nitellopsis obtusa,11,TM-161
+92,Corbicula,fluminea,,Corbicula fluminea,Asian clam,Asia,Mollusks,Direct Accidental Release,1933,10,1,Bartos 2022,established,Corbicula fluminea,10,Bartos 2022
+987,Bithynia,tentaculata,,Bithynia tentaculata,Mud bithynia,Europe,Mollusks,Ballast,1871,9,6,a,established,Bithynia tentaculata,9,TM-161
+239,Lythrum,salicaria,,Lythrum salicaria,Purple loosestrife,Eurasia,Plants,Ballast,1869,9,0,a,established,Lythrum salicaria,9,TM-161
+910,Oncorhynchus,mykiss,,Oncorhynchus mykiss,Rainbow Trout,North America,Fish,Deliberate Release,1880,9,3,a,established,Oncorhynchus mykiss,9,TM-161
+1134,Potamogeton,crispus,,Potamogeton crispus,Curly-leaf pondweed,Eurasia,Plants,Hitchhiker,1879,9,1,a,established,Potamogeton crispus,9,TM-161
+217,Procambarus,clarkii,,Procambarus clarkii,Red Swamp Crayfish,North America,Crustaceans,Direct Accidental Release,1967,9,0,b,established,Procambarus clarkii,9,Boucher 2019 (TM-161b)
+931,Salmo,trutta,,Salmo trutta,Brown Trout,Europe,Fish,Deliberate Release,1883,9,3,a,established,Salmo trutta,9,TM-161
+162,Bythotrephes,longimanus,,Bythotrephes longimanus,Spiny waterflea,Europe,Crustaceans,Ballast,1880,8,2,a,established,Bythotrephes longimanus,8,TM-161
+231,Cabomba,caroliniana,,Cabomba caroliniana,Carolina fanwort,North America,Plants,Direct Accidental Release,1935,8,0,a,established,Cabomba caroliniana,8,TM-161
+2664,Echinochloa,crus-galli,,Echinochloa crus-galli,Barnyardgrass,Eurasia,Plants,Deliberate Release,1838,8,2,a,established,Echinochloa crus-galli,9,TM-161
+3810,Filipendula,ulmaria,,Filipendula ulmaria,Queen of the meadow,Eurasia,Plants,Direct Accidental Release,,8,,Rose 2022,established,Filipendula ulmaria,8,Rose 2022
+2364,Myxobolus,cerebralis,,Myxobolus cerebralis,Salmonid whirling disease,Europe,Other,Hitchhiker,1938,8,0,a,established,Myxobolus cerebralis,8,TM-161
+3247,Salmincola,californiensis,,Salmincola californiensis,Gill maggot,North America,Crustaceans,Hitchhiker,2014,8,1,d,established,Salmincola californiensis,8,Bartos 2020 (TM-161d)
+2679,Typha,angustifolia,,Typha angustifolia,Narrow-leaved cattail,Eurasia,Plants,Direct Accidental Release,1877,8,0,a,established,Typha angustifolia,8,TM-161
+2732,Daphnia,galeata,galeata,Daphnia galeata galeata,A waterflea,Eurasia,Crustaceans,Ballast,1980,7,0,c,established,Daphnia galeata galeata,7,"Boucher 2019 (TM-161c), TM-161"
+2661,Heterosporis,sutherlandae,,Heterosporis sutherlandae,A microsporidian parasite,Unknown,Other,Hitchhiker,2000,7,0,a,established,Heterosporis sutherlandae,7,"Sturtevant 2018 (TM-161b), TM-161"
+2666,Persicaria,maculosa,,Persicaria maculosa,Spotted ladysthumb,Eurasia,Plants,Unknown,1838,7,2,a,established,Persicaria maculosa,7,"Lower 2019 (TM-161c), TM-161"
+2725,Rhabdovirus,carpio,,Rhabdovirus carpio,Spring viremia of carp (SVC),Eurasia,Other,Hitchhiker,2001,7,0,a,established,Rhabdovirus carpio,7,TM-161
+1110,Hydrocharis,morsus-ranae,,Hydrocharis morsus-ranae,European frogbit,Europe,Plants,Direct Accidental Release,1972,6,2,a,established,Hydrocharis morsus-ranae,6,TM-161
+2720,Ichthyocotylurus,pileatus,,Ichthyocotylurus pileatus,A digenean fluke,Eurasia,Other,Ballast,1929,6,0,a,established,Ichthyocotylurus pileatus,6,TM-161
+2657,Ranavirus,,,Ranavirus,Largemouth bass virus (LMBV),Unknown,Other,Deliberate Release,1999,6,0,a,established,Ranavirus,6,TM-161
+648,Scardinius,erythrophthalmus,,Scardinius erythrophthalmus,Rudd,Eurasia,Fish,Direct Accidental Release,1931,6,2,d,established,Scardinius erythrophthalmus,6,Bartos 2020 (TM-161d)
+3159,Stratiotes,aloides,,Stratiotes aloides,Water soldier,Eurasia,Plants,Direct Accidental Release,,6,,VanZeghbroek 2023,established,Stratiotes aloides,6,VanZeghbroek 2023
+1261,Trachemys,scripta,elegans,Trachemys scripta elegans ,Red-eared slider,North America,Other,Direct Accidental Release,1924,6,3,e,range expander,Trachemys scripta elegans,6,Cameron 2021
+1047,Viviparus,georgianus,,Viviparus georgianus,Banded mysterysnail,North America,Mollusks,Direct Accidental Release,1906,6,1,e,established,Viviparus georgianus,6,Bartos 2021
+1118,Najas,minor,,Najas minor,Brittle waternymph,Eurasia,Plants,Hitchhiker,1875,5,1,a,established,Najas minor,5,TM-161
+243,Nymphoides,peltata,,Nymphoides peltata,Yellow floating-heart,Eurasia,Plants,Deliberate Release,1930,5,1,a,established,Nymphoides peltata,5,TM-161
+1687,Stephanodiscus,binderanus,,Stephanodiscus binderanus,A centric diatom,Eurasia,Algae,Ballast,1930,5,0,a,established,Stephanodiscus binderanus,5,TM-161
+2726,Ulva (Enteromorpha),flexuosa,subsp. flexuosa and flexuosa subsp. paradoxa,Ulva (Enteromorpha) flexuosa subsp. flexuosa and flexuosa subsp. paradoxa,"Green alga, grass kelp",Unknown,Algae,Ballast,2003,5,0,a,established,Ulva (Enteromorpha) flexuosa subsp. flexuosa and flexuosa subsp. paradoxa,5,TM-161
+1100,Butomus,umbellatus,,Butomus umbellatus,Flowering rush,Eurasia,Plants,Deliberate Release,1905,4,3,a,established,Butomus umbellatus,4,TM-161
+2669,Conium,maculatum,,Conium maculatum,Poison-hemlock,Eurasia,Plants,Deliberate Release,1843,4,0,a,established,Conium maculatum,4,TM-161
+361,Ictiobus,bubalus,,Ictiobus bubalus,Smallmouth Buffalo,North America,Fish,Direct Accidental Release,1965,4,,Sturtevant 2023,established,Ictiobus bubalus,4,Sturtevant 2023
+498,Misgurnus,anguillicaudatus,,Misgurnus anguillicaudatus,Pond Loach,Asia,Fish,Canal,1939,4,2,e,established,Misgurnus anguillicaudatus,4,Bartos 2021
+906,Oncorhynchus,gorbuscha,,Oncorhynchus gorbuscha,Pink Salmon,North America,Fish,Direct Accidental Release,1956,4,2,c,established,Oncorhynchus gorbuscha,4,"Boucher and Lower 2019 (TM-161c), TM-161"
+3246,Salix,caprea,,Salix caprea,Goat willow,Eurasia,Plants,Deliberate Release,1993,4,3,b,established,Salix caprea,4,Hopper 2018 (TM-161b)
+2665,Solanum,dulcamara,,Solanum dulcamara,Bitter nightshade,Eurasia,Plants,Deliberate Release,1843,4,2,a,established,Solanum dulcamara,4,TM-161
+1695,Actinocyclus,normanii,f. subsalsa,Actinocyclus normanii f. subsalsa,A centric diatom,Europe,Algae,Ballast,1709,3,0,a,cryptogenic,Actinocyclus normanii f. subsalsa,3,Bartos 2021
+2696,Alnus,glutinosa,,Alnus glutinosa,Black alder,Eurasia,Plants,Deliberate Release,1913,3,1,a,established,Alnus glutinosa,3,TM-161
+3830,Anguillicola,crassus,,Anguillicola crassus,Eel swimbladder nematode,Asia,Other,Direct Accidental Release,2010,3,,Redinger 2023 (in review),established,Anguillicola crassus,3,Redinger 2023 (in review)
+2651,Cylindrospermopsis,raciborskii,,Cylindrospermopsis raciborskii,Cylindro,Other,Algae,Ballast,1971,3,0,a,established,Cylindrospermopsis raciborskii,3,TM-161
+1120,Glyceria,maxima,,Glyceria maxima,Reed mannagrass,Eurasia,Plants,Deliberate Release,1979,3,2,a,established,Glyceria maxima,3,TM-161
+2627,Hemimysis,anomala,,Hemimysis anomala,Bloody red shrimp,Eurasia,Crustaceans,Ballast,2006,3,3,c,established,Hemimysis anomala,3,"Boucher 2019 (TM-161c), TM-161"
+362,Ictiobus,cyprinellus,,Ictiobus cyprinellus,Bigmouth Buffalo,North America,Fish,Direct Accidental Release,1962,3,,Sturtevant 2023,established,Ictiobus cyprinellus,3,Sturtevant 2023
+2691,Juncus,compressus,,Juncus compressus,Roundfruit rush,Eurasia,Plants,Deliberate Release,1895,3,2,a,established,Juncus compressus,3,TM-161
+2699,Juncus,inflexus,,Juncus inflexus,European meadow rush,Eurasia,Plants,Deliberate Release,1922,3,1,a,established,Juncus inflexus,3,TM-161
+2673,Juncus,gerardii,,Juncus gerardii,Saltmeadow rush,North America,Plants,Ballast,1862,3,2,a,range expander,,,
+908,Oncorhynchus,kisutch,,Oncorhynchus kisutch,Coho Salmon,North America,Plants,Deliberate Release,1876,3,2,a,established,Oncorhynchus kisutch,3,TM-161
+2658,Piscirickettsia cf.,salmonis,,Piscirickettsia cf. salmonis,Muskie pox,Unknown,Other,Unknown,1899,3,0,a,established,Piscirickettsia cf. salmonis,3,TM-161
+1008,Potamopyrgus,antipodarum,,Potamopyrgus antipodarum,New Zealand mudsnail,Eurasia,Mollusks,Ballast,1991,3,4,a,established,Potamopyrgus antipodarum,3,TM-161
+2684,Salix,fragilis,,Salix fragilis,Crack willow,Eurasia,Plants,Deliberate Release,1886,3,5,a,established,Salix fragilis,3,TM-161
+3604,Stagnicola,palustris,,Stagnicola palustris,Marsh pond snail,Europe,Mollusks,Unknown,,3,0,Bartos 2021,cryptogenic,Stagnicola palustris,3,Bartos 2021 (NP)
+1714,Ulva (Enteromorpha),intestinalis,,Ulva (Enteromorpha) intestinalis,"Green alga, grass kelp",North America,Algae,Unknown,1926,3,0,a,established,Ulva (Enteromorpha) intestinalis,3,TM-161
+2353,Aeromonas,salmonicida,,Aeromonas salmonicida,"Furunculosis, ulcer disease, erythrodermatitis",Unknown,Algae,Direct Accidental Release,1850,2,0,a,established,Aeromonas salmonicida,2,TM-161
+2704,Carex,acutiformis,,Carex acutiformis,Lesser pond sedge,Eurasia,Plants,Hitchhiker,1951,2,2,a,established,Carex acutiformis,2,TM-161
+2702,Cirsium,palustre,,Cirsium palustre,Marsh thistle,Eurasia,Plants,Unknown,1882,2,1,a,established,Cirsium palustre,2,TM-161
+2711,Cyclops,strenuus,,Cyclops strenuus,A copepod,North America,Plants,Unknown,1972,2,2,a,established,Cyclops strenuus,2,TM-161
+23,Echinogammarus,ischnus,,Echinogammarus ischnus,Scud,Europe,Other,Unknown,1950,2,1,d,established,Echinogammarus ischnus,2,Bartos 2020 (TM-161d)
+2678,Epilobium,hirsutum,,Epilobium hirsutum,Hairy willow herb,Eurasia,Plants,Deliberate Release,1874,2,1,a,established,Epilobium hirsutum,2,TM-161
+7,Gymnocephalus,cernua,,Gymnocephalus cernua,Ruffe,Eurasia,Mollusks,Ballast,1986,2,5,a,established,Gymnocephalus cernua,2,TM-161
+363,Ictiobus,niger,,Ictiobus niger,Black Buffalo,North America,Fish,Direct Accidental Release,1986,2,,Sturtevant 2023,established,Ictiobus niger,2,Sturtevant 2023
+390,Lepomis,microlophus,,Lepomis microlophus,Redear Sunfish,North America,Plants,Deliberate Release,1928,2,2,a,established,Lepomis microlophus,2,TM-161
+2715,Lupinus,polyphyllus,,Lupinus polyphyllus,Marsh lupine,North America,Mollusks,Deliberate Release,1954,2,2,a,established,Lupinus polyphyllus,2,TM-161
+254,Lysimachia,vulgaris,,Lysimachia vulgaris,Garden loosestrife,Eurasia,Plants,Deliberate Release,1912,2,3,a,established,Lysimachia vulgaris,2,TM-161
+229,Nasturtium,officinale,,Nasturtium officinale,Water-cress,Eurasia,Crustaceans,Deliberate Release,1847,2,3,a,established,Nasturtium officinale,2,TM-161
+750,Pylodictis,olivaris,,Pylodictis olivaris,Flathead catfish,North America,Fish,Deliberate Release,1890,2,2,e,established,Pylodictis olivaris,2,Bartos 2021
+1012,Radix,auricularia,,Radix auricularia,European ear snail,Europe,Plants,Direct Accidental Release,1901,2,4,a,established,Radix auricularia,2,TM-161
+2682,Rorippa,sylvestris,,Rorippa sylvestris,Keek,Eurasia,Other,Ballast,1884,2,3,a,established,Rorippa sylvestris,2,TM-161
+2693,Rumex,longifolius,,Rumex longifolius,Door-yard dock,Eurasia,Plants,Direct Accidental Release,1901,2,3,a,established,Rumex longifolius,2,TM-161
+2663,Rumex,obtusifolius,,Rumex obtusifolius,Bluntleaf dock,Eurasia,Plants,Unknown,1837,2,3,a,established,Rumex obtusifolius,2,TM-161
+2798,Schyzocotyle,acheilognathi,,Schyzocotyle acheilognathi,Asian tapeworm,Asia,Plants,Direct Accidental Release,2001,2,0,a,established,Schyzocotyle acheilognathi,2,"Sturtevant 2018 (TM-161b), TM-161"
+2714,Ulva (Enteromorpha),prolifera,,Ulva (Enteromorpha) prolifera,"Green alga, grass kelp, sea lettuce",North America,Plants,Unknown,1979,2,0,a,established,Ulva (Enteromorpha) prolifera,2,TM-161
+2362,Acentria,ephemerella,,Acentria ephemerella,(European) aquatic/water moth,Europe,Crustaceans,Direct Accidental Release,1938,1,4,a,established,Acentria ephemerella,1,TM-161
+2681,Alopecurus,geniculatus,,Alopecurus geniculatus,Water foxtail,Eurasia,Other,Direct Accidental Release,1882,1,3,a,established,Alopecurus geniculatus,1,TM-161
+166,Argulus,japonicus,,Argulus japonicus,Japanese fishlouse,Asia,Plants,Direct Accidental Release,1976,1,5,a,established,Argulus japonicus,1,TM-161
+1700,Bangia,atropurpurea,,Bangia atropurpurea,A red alga,Europe,Fish,Ballast,1944,1,3,a,established,Bangia atropurpurea,1,TM-161
+1151,Branchiura,sowerbyi,,Branchiura sowerbyi,A tubificid worm,Asia,Crustaceans,Direct Accidental Release,1938,1,6,a,established,Branchiura sowerbyi,1,TM-161
+508,Carassius,auratus,,Carassius auratus,Goldfish,Asia,Plants,Direct Accidental Release,1917,1,4,a,established,Carassius auratus,1,TM-161
+2676,Carex,disticha,,Carex disticha,Tworank sedge,Eurasia,Plants,Ballast,1866,1,0,a,established,Carex disticha,1,TM-161
+1060,Cordylophora,caspia,,Cordylophora caspia,Freshwater hydroid,Eurasia,Fish,Unknown,1956,1,6,a,established,Cordylophora caspia,1,TM-161
+1032,Elimia,virginica,,Elimia virginica,Piedmont elimia,North America,Fish,Canal,1872,1,5,a,established,Elimia virginica,1,TM-161
+681,Esox,niger,,Esox niger,Chain Pickerel,North America,Plants,Deliberate Release,1985,1,5,a,range expander,,,
+2695,Impatiens,glandulifera,,Impatiens glandulifera,Ornamental jewelweed,Asia,Crustaceans,Deliberate Release,1912,1,2,a,established,Impatiens glandulifera,1,TM-161
+2694,Lycopus,europaeus,,Lycopus europaeus,European bugleweed,Eurasia,Other,Ballast,1903,1,3,a,established,Lycopus europaeus,1,TM-161
+2680,Lysimachia,nummularia,,Lysimachia nummularia,Creeping jenny,Eurasia,Other,Deliberate Release,1882,1,3,a,established,Lysimachia nummularia,1,TM-161
+2668,Mentha,aquatica,,Mentha aquatica,Water mint,Eurasia,Plants,Deliberate Release,1843,1,5,a,established,Mentha aquatica,1,TM-161
+2794,Mesocyclops,pehpeiensis,,Mesocyclops pehpeiensis,A copepod,Asia,Algae,Deliberate Release,2016,1,6,b,established,Mesocyclops pehpeiensis,0,Sturtevant 2018 (TM-161b)
+2674,Najas,marina,,Najas marina,Holly-leaf waternymph,Other,Plants,Ballast,1864,1,3,a,range expander,,,
+2595,Neoergasilus,japonicus,,Neoergasilus japonicus,A parasitic copepod,Asia,Plants,Unknown,1994,1,3,a,established,Neoergasilus japonicus,1,TM-161
+2372,Nitokra,hibernica,,Nitokra hibernica,A harpacticoid copepod,Eurasia,Crustaceans,Ballast,1972,1,2,a,established,Nitokra hibernica,1,TM-161
+2373,Nitokra,incerta,,Nitokra incerta,A harpacticoid copepod,Eurasia,Fish,Ballast,1999,1,2,a,established,Nitokra incerta,1,TM-161
+748,Noturus,insignis,,Noturus insignis,Margined Madtom,North America,Crustaceans,Direct Accidental Release,1966,1,4,a,range expander,,,
+3267,Pluchea,oderata,,Pluchea odorata ,sweetscent,North America,Plants,Direct Accidental Release,1912,1,5,a,established,Pluchea odorata,1,"Lower 2019 (TM-161c), TM-161"
+714,Proterorhinus,semilunaris,,Proterorhinus semilunaris,Freshwater Tubenose Goby,Eurasia,Plants,Unknown,1990,1,0,d,established,Proterorhinus semilunaris,1,Sturtevant 2020 (TM-161d)
+2687,Salix,alba,,Salix alba,Golden willow,Eurasia,Algae,Deliberate Release,1886,1,6,a,established,Salix alba,1,TM-161
+2716,Salmincola,lotae,,Salmincola lotae,A parasitic copepod,Eurasia,Crustaceans,Unknown,1964,1,2,a,established,Salmincola lotae,1,TM-161
+2710,Solidago,sempervirens,,Solidago sempervirens,Seaside goldenrod,North America,Crustaceans,Direct Accidental Release,1969,1,4,a,established,Solidago sempervirens,1,TM-161
+2793,Thermocyclops,crassus,,Thermocyclops crassus,A copepod,Other,Plants,Unknown,2014,1,1,b,established,Thermocyclops crassus,1,Bartos 2022
+261,Veronica,beccabunga,,Veronica beccabunga,European speedwell,Europe,Plants,Ballast,1849,1,VanZeghbroek 2023,VanZeghbroek 2023,established,Veronica beccabunga,0,VanZeghbroek 2023
+2367,Acineta,nitocrae,,Acineta nitocrae,A suctorian ciliate,Eurasia,Other,Ballast,1997,0,0,a,established,Acineta nitocrae,0,TM-161
+2683,Agrostis,gigantea,,Agrostis gigantea,Redtop,Eurasia,Plants,Direct Accidental Release,1838,0,4,a,established,Agrostis gigantea,0,"TM-161 (benefits listed as 1 with 2 unknowns, but actual scores not included in appendix)"
+488,Alosa,aestivalis,,Alosa aestivalis,Blueback Herring,North America,Other,Deliberate Release,1981,0,3,a,established,Alosa aestivalis,0,TM-161
+700,Apeltes,quadracus,,Apeltes quadracus,Fourspine Stickleback,North America,Other,Ballast,1986,0,4,a,established,Apeltes quadracus,0,TM-161
+1674,Chaetoceros,muelleri,,Chaetoceros muelleri,A centric diatom,Unknown,Other,Ballast,1893,0,0,a,established,Chaetoceros muelleri,0,TM-161
+2677,Chenopodium,glaucum,,Chenopodium glaucum,Oakleaf goosefoot,Eurasia,Algae,Ballast,1865,0,2,a,established,Chenopodium glaucum,0,TM-161
+1711,Chroodactylon,ornatum,,Chroodactylon ornatum,A red alga,North America,Crustaceans,Ballast,1964,0,0,a,established,Chroodactylon ornatum,0,TM-161
+1044,Cipangopaludina,chinensis,,Cipangopaludina chinensis,Chinese mysterysnail,Asia,Algae,Direct Accidental Release,1931,0,7,a,established,Cipangopaludina chinensis,0,TM-161
+1046,Cipangopaludina,japonica,,Cipangopaludina japonica,Japanese mysterysnail,Asia,Mollusks,Direct Accidental Release,1937,0,8,a,established,Cipangopaludina japonica,0,TM-161
+1690,Conticribra,guillardii,,Conticribra guillardii,A centric diatom,Europe,Fish,Ballast,1973,0,0,a,established,Conticribra guillardii,0,TM-161
+1068,Craspedacusta,sowerbyi,,Craspedacusta sowerbyi,Freshwater jellyfish,Asia,Algae,Direct Accidental Release,1933,0,5,a,established,Craspedacusta sowerbyi,0,TM-161
+1669,Cyclotella,atomus,,Cyclotella atomus,A centric diatom,Unknown,Other,Ballast,1964,0,1,a,established,Cyclotella atomus,0,TM-161
+1671,Cyclotella,cryptica,,Cyclotella cryptica,A centric diatom,Unknown,Mollusks,Ballast,1880,0,0,a,established,Cyclotella cryptica,0,TM-161
+2721,Dactylogyrus,amphibothrium,,Dactylogyrus amphibothrium,A monogenetic fluke,Eurasia,Crustaceans,Hitchhiker,1992,0,0,a,established,Dactylogyrus amphibothrium,0,TM-161
+2731,Dactylogyrus,hemiamphibothrium,,Dactylogyrus hemiamphibothrium,A monogenetic fluke,Eurasia,Other,Hitchhiker,1992,0,0,a,established,Dactylogyrus hemiamphibothrium,0,TM-161
+164,Daphnia,lumholtzi,,Daphnia lumholtzi,A waterflea,Other,Other,Unknown,1999,0,5,a,established,Daphnia lumholtzi,0,TM-161
+2648,Diaphanosoma,fluviatile,,Diaphanosoma fluviatile,A cladoceran,Other,Other,Hitchhiker,2015,0,5,b,established,Diaphanosoma fluviatile,0,Lower and Sturtevant 2018 (TM-161b)
+1670,Diatoma,ehrenbergii,,Diatoma ehrenbergii,A pennate diatom,Unknown,Other,Ballast,1938,0,0,a,established,Diatoma ehrenbergii,0,TM-161
+1672,Discostella,pseudostelligera,,Discostella pseudostelligera,A centric diatom,Unknown,Other,Ballast,1933,0,0,a,established,Discostella pseudostelligera,0,TM-161
+2706,Discostella,woltereckii,,Discostella woltereckii,A centric diatom,Unknown,Algae,Ballast,1964,0,1,a,established,Discostella woltereckii,0,TM-161
+377,Enneacanthus,gloriosus,,Enneacanthus gloriosus,Bluespotted Sunfish,North America,Other,Direct Accidental Release,1916,0,7,a,established,Enneacanthus gloriosus,0,TM-161
+161,Eubosmina,coregoni,,Eubosmina coregoni,Baltic Long-nosed Waterflea,Europe,Algae,Ballast,1966,0,4,a,established,Eubosmina coregoni,0,TM-161
+2370,Eubosmina,maritima,,Eubosmina maritima,A cladoceran,Eurasia,Algae,Ballast,1966,0,2,a,established,Eubosmina maritima,0,TM-161
+178,Eurytemora,affinis,,Eurytemora affinis,A calanoid copepod,North America,Algae,Ballast,1958,0,8,a,established,Eurytemora affinis,0,TM-161
+2650,Gammarus,tigrinus,,Gammarus tigrinus,Tiger scud,North America,Algae,Ballast,1980,0,4,a,established,Gammarus tigrinus,0,TM-161
+2542,Gianius,aquaedulcis,,Gianius aquaedulcis,A tubificid worm,Europe,Other,Ballast,1983,0,7,a,established,Gianius aquaedulcis,0,TM-161
+1007,Gillia,altilis,,Gillia altilis,Buffalo pebblesnail,North America,Other,Canal,1915,0,4,a,established,Gillia altilis,0,TM-161
+2368,Glugea,hertwigi,,Glugea hertwigi,A microsporidian parasite,Europe,Other,Hitchhiker,1960,0,0,a,established,Glugea hertwigi,0,TM-161
+2659,Heteropsyllus,nr. nunni,,Heteropsyllus nr. nunni,A copepod,Unknown,Plants,Ballast,1996,0,2,a,established,Heteropsyllus nr. nunni,0,TM-161
+1696,Hymenomonas,roseola,,Hymenomonas roseola,A coccolithophorid,Europe,Algae,Ballast,1956,0,3,a,established,Hymenomonas roseola,0,TM-161
+146,Lasmigona,subviridis,,Lasmigona subviridis,Green floater,North America,Algae,Canal,1959,0,0,a,established,Lasmigona subviridis,0,TM-161
+757,Lepisosteus,platostomus,,Lepisosteus platostomus,Shortnose Gar,North America,Crustaceans,Canal,1962,0,5,a,established,Lepisosteus platostomus,0,TM-161
+383,Lepomis,humilis,,Lepomis humilis,Orangespotted Sunfish,North America,Algae,Deliberate Release,1929,0,3,c,established,Lepomis humilis,0,"Boucher 2019 (TM-161c), TM-161"
+278,Lophopodella,carteri,,Lophopodella carteri,Asian freshwater bryozoan,Asia,Crustaceans,Direct Accidental Release,1934,0,8,a,established,Lophopodella carteri,0,TM-161
+2688,Lycopus,asper,,Lycopus asper,Rough bugleweed,North America,Mollusks,Unknown,1892,0,2,a,established,Lycopus asper,0,TM-161
+293,Marsilea,quadrifolia,,Marsilea quadrifolia,European water-clover,Eurasia,Mollusks,Deliberate Release,1893,0,4,a,established,Marsilea quadrifolia,0,TM-161
+2723,Megacyclops,viridis,,Megacyclops viridis,A cyclopoid copepod,Europe,Fish,Ballast,1994,0,2,a,established,Megacyclops viridis,0,TM-161
+2698,Mentha,gracilis,,Mentha gracilis,Gingermint,Eurasia,Plants,Deliberate Release,,0,,a,established,Mentha gracilis,0,TM-161
+2671,Mentha,spicata,,Mentha spicata,Spearmint,Eurasia,Plants,Deliberate Release,1843,0,6,a,established,Mentha spicata,0,TM-161
+2686,Myosotis,scorpioides,,Myosotis scorpioides,Forget-me-not,Eurasia,Mollusks,Direct Accidental Release,1886,0,2,a,established,Myosotis scorpioides,0,TM-161
+2743,Myosoton,aquaticum,,Myosoton aquaticum,Giant chickweed,Eurasia,Fish,Unknown,1894,0,2,a,established,Myosoton aquaticum,0,TM-161
+2361,Neascus,brevicaudatus,,Neascus brevicaudatus,"A digenean fluke, trematode",Eurasia,Crustaceans,Hitchhiker,1992,0,0,a,established,Neascus brevicaudatus,0,TM-161
+590,Notropis,buchanani,,Notropis buchanani,Ghost Shiner,North America,Crustaceans,Direct Accidental Release,1979,0,5,a,range expander,,,
+915,Oncorhynchus,nerka,,Oncorhynchus nerka,Sockeye Salmon,North America,Plants,Deliberate Release,1870,0,4,a,established,Oncorhynchus nerka,0,TM-161
+617,Phenacobius,mirabilis,,Phenacobius mirabilis,Suckermouth Minnow,North America,Fish,Unknown,,0,0,a,range expander,,,
+129,Pisidium,amnicum,,Pisidium amnicum,Greater European peaclam,Eurasia,Fish,Ballast,1897,0,5,a,established,Pisidium amnicum,0,TM-161
+130,Pisidium,henslowanum,,Pisidium henslowanum,Henslow peaclam,Eurasia,Other,Ballast,1916,0,5,a,established,Pisidium henslowanum,0,TM-161
+2375,Pisidium,moitessierianum,,Pisidium moitessierianum,Pygmy peaclam,Eurasia,Mollusks,Ballast,1895,0,5,a,established,Pisidium moitessierianum,0,TM-161
+2391,Pisidium,supinum,,Pisidium supinum,Humpbacked peaclam,Eurasia,Algae,Ballast,1959,0,5,a,established,Pisidium supinum,0,TM-161
+1699,Pleurosira,laevis,,Pleurosira laevis,A centric diatom,Other,Fish,Ballast,1978,0,2,a,established,Pleurosira laevis,0,TM-161
+2670,Poa,trivialis,,Poa trivialis,Rough bluegrass,Eurasia,Plants,Deliberate Release,1843,0,1,a,established,Poa trivialis,0,TM-161
+2703,Potamothrix,bedoti,,Potamothrix bedoti,A tubificid worm,Eurasia,Algae,Unknown,1967,0,7,a,established,Potamothrix bedoti,0,TM-161
+2705,Potamothrix,moldaviensis,,Potamothrix moldaviensis,A tubificid worm,Eurasia,Fish,Unknown,1952,0,7,a,established,Potamothrix moldaviensis,0,TM-161
+2708,Potamothrix,vejdovskyi,,Potamothrix vejdovskyi,A tubificid worm,Eurasia,Algae,Unknown,1965,0,7,a,established,Potamothrix vejdovskyi,0,TM-161
+2653,Psammonobiotus,communis,,Psammonobiotus communis,A testate amoeba,Eurasia,Other,Ballast,2002,0,3,a,established,Psammonobiotus communis,0,TM-161
+2654,Psammonobiotus,dziwnowi,,Psammonobiotus dziwnowi,A testate amoeba,Eurasia,Algae,Ballast,1901,0,3,a,established,Psammonobiotus dziwnowi,0,TM-161
+2655,Psammonobiotus,linearis,,Psammonobiotus linearis,A testate amoeba,Eurasia,Other,Ballast,2002,0,0,a,established,Psammonobiotus linearis,0,TM-161
+2689,Puccinellia,distans,,Puccinellia distans,Weeping alkaligrass,Eurasia,Mollusks,Ballast,1893,0,1,a,established,Puccinellia distans,0,TM-161
+2244,Ripistes,parasita,,Ripistes parasita,An oligochaete,Eurasia,Other,Ballast,1984,0,7,a,established,Ripistes parasita,0,TM-161
+2685,Salix,purpurea,,Salix purpurea,Purple osier,Eurasia,Plants,Deliberate Release,1873,0,5,a,established,Salix purpurea,0,TM-161
+2374,Schizopera,borutzkyi,,Schizopera borutzkyi,An oarsman,Europe,Other,Ballast,1988,0,1,c,established,Schizopera borutzkyi,0,"Lower 2019 (TM-161c), TM-161"
+2359,Schmidtea,polychroa,,Schmidtea polychroa,A flatworm,Europe,Algae,Ballast,1968,0,0,a,established,Schmidtea polychroa,0,TM-161 (as Dugesia polychroa)
+2722,Scolex,pleuronectis,,Scolex pleuronectis,A cestode,Eurasia,Other,Ballast,1994,0,0,a,established,Scolex pleuronectis,0,TM-161
+1689,Skeletonema,potamos,,Skeletonema potamos,A centric diatom,Unknown,Other,Ballast,1963,0,1,a,established,Skeletonema potamos,0,TM-161
+2712,Skeletonema,subsalsum,,Skeletonema subsalsum,A centric diatom,Eurasia,Crustaceans,Ballast,1973,0,0,a,established,Skeletonema subsalsum,0,TM-161
+169,Skistodiaptomus,pallidus,,Skistodiaptomus pallidus,A calanoid copepod,North America,Algae,Unknown,1967,0,5,a,established,Skistodiaptomus pallidus,0,TM-161
+2701,Sparganium,glomeratum,,Sparganium glomeratum,Northern bur-reed,North America,Plants,Unknown,,0,6,a,range expander,,,
+1686,Sphacelaria,fluviatilis,,Sphacelaria fluviatilis,A brown alga,Asia,Other,Direct Accidental Release,1975,0,0,a,established,Sphacelaria fluviatilis,0,TM-161
+1676,Sphacelaria,lacustris,,Sphacelaria lacustris,A brown alga,Unknown,Other,Direct Accidental Release,1975,0,0,a,established,Sphacelaria lacustris,0,TM-161
+131,Sphaerium,corneum,,Sphaerium corneum,European fingernail clam,Eurasia,Mollusks,Ballast,1900,0,6,a,established,Sphaerium corneum,0,TM-161
+2724,Sphaeromyxa,sevastopoli,,Sphaeromyxa sevastopoli,A myxosporean parasite,Eurasia,Crustaceans,Ballast,1994,0,0,a,established,Sphaeromyxa sevastopoli,0,TM-161
+1698,Stephanodiscus,subtilis,,Stephanodiscus subtilis,A centric diatom,Eurasia,Algae,Ballast,1946,0,1,a,established,Stephanodiscus subtilis,0,TM-161
+2363,Tanysphyrus,lemnae,,Tanysphyrus lemnae,Duckweed/aquatic weevil,Europe,Mollusks,Unknown,1934,0,4,a,established,Tanysphyrus lemnae,0,TM-161
+2717,Thalassiosira,baltica,,Thalassiosira baltica,A centric diatom,Eurasia,Crustaceans,Ballast,1988,0,1,a,established,Thalassiosira baltica,0,TM-161
+1691,Thalassiosira,bramaputrae,,Thalassiosira bramaputrae,A centric diatom,Unknown,Other,Ballast,1978,0,0,a,established,Thalassiosira bramaputrae,0,TM-161 (as T. lacustris)
+1692,Thalassiosira,pseudonana,,Thalassiosira pseudonana,A centric diatom,Unknown,Fish,Ballast,1973,0,0,a,established,Thalassiosira pseudonana,0,TM-161
+1693,Thalassiosira,weissflogii,,Thalassiosira weissflogii,A centric diatom,Unknown,Crustaceans,Ballast,1962,0,0,a,established,Thalassiosira weissflogii,0,TM-161
+2727,Timoniella,sp.,,Timoniella sp.,"A digenean fluke, trematode",Unknown,Other,Unknown,1992,0,0,a,established,Timoniella sp.,0,TM-161
+2369,Trypanosoma,acerinae,,Trypanosoma acerinae,A flagellate parasite,Eurasia,Other,Hitchhiker,1985,0,0,a,established,Trypanosoma acerinae,0,TM-161
+1043,Valvata,piscinalis,,Valvata piscinalis,European stream valvata,Europe,Fish,Hitchhiker,1897,0,5,a,established,Valvata piscinalis,0,TM-161
