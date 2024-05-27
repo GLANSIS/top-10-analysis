@@ -1,0 +1,5 @@
+# Top 10 Paper Analysis and Figure Creation
+This project focuses on processing and analyzing invasive species impact score data for the Great Lakes. The provided script cleans and organizes the data for chi-square tests, and creates two main figures for publication: Figure 1, a bar plot depicting the distribution of impact scores across various species, and Figure 2, a series of pie charts comparing characteristics between all invasive species and the top ten invaders. Additionally, the script includes exploratory data analysis and the best fitting GLMs for counts of impact factors derived from GLANSIS organism risk assessments, though this latter analysis was ultimately removed from the final draft of the paper.
+
+This analysis and figures was published in: 
+Lower, E., R. Sturtevant, S. Iott, F. Martinez, E. Rutherford, D.M. Mason, J. Redinger, and A.K. Elgin. 2023. The Great Lakes’ Most Unwanted: Characterizing the Impacts of the Top Great Lakes Aquatic Invasive Species. Journal of Great Lakes Research (In press)
